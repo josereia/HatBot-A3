@@ -5,7 +5,7 @@ const colors = {
     card_shadow: "#DDDDDD",
     text: "#000000",
     textContrast: "#ffffff",
-    background: "#ffffff"
+    background: "#ffffff",
 }
 
 export default colors
