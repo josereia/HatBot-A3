@@ -1,10 +1,11 @@
 import React from "react";
-import { Container } from "./styles";
+import { Container, ProfilePic, Title } from "./styles";
 
-export default function Header() {
+export default function Header(props) {
     return (
         <Container>
-            <p>jsjsj</p>
+            <ProfilePic src={require("../../assets/logo.png")} />
+            <Title>{props.title}</Title>
         </Container>
     )
 }

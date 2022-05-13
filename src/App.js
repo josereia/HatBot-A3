@@ -1,16 +1,12 @@
-import { Header } from "./components"
+import React from "react";
+import { ThemeProvider } from "styled-components";
+import Navigation from "./navigation";
+import getTheme from "./theme"
 
 export default function App() {
 	return (
-		<>
-			<Header />
-			<main>
-
-			</main>
-			<footer>
-
-			</footer>
-		</>
-
+		<ThemeProvider theme={getTheme()}>
+			<Navigation />
+		</ThemeProvider>
 	);
 }
