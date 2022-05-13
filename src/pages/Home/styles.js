@@ -14,6 +14,8 @@ export const Container = styled.div`
 export const ChatContainer = styled.main`
     width: 100%;
     height: 100%;
+    position: relative;
+    overflow-y: auto;
 `
 
 export const Footer = styled.footer`
