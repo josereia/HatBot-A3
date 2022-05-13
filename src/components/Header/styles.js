@@ -5,7 +5,7 @@ export const Container = styles.header`
     height: 60px;
     padding: 16px;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     border: solid 1px #eee;
 `
