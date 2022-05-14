@@ -7,5 +7,5 @@ export const Container = styled.div`
 `
 
 export const Text = styled.p`
-    font-size: 16px;
+    font-size: 26px;
 `

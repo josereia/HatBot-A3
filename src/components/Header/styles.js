@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const Container = styled.header`
     width: 100%;
-    height: 80px;
+    height: 60px;
     padding: ${({ theme }) => theme.metrics.padding};
     position: fixed;
     top: 0;
@@ -20,9 +20,10 @@ export const Title = styled.h1`
     font-size: 24px;
 `
 
-export const ProfilePic = styled.img`
-    width: 40px;
-    height: 40px;
+export const BackButton = styled.button`
+    display: flex;
     margin-right:  ${({ theme }) => theme.metrics.padding};
-    border-radius: 50px;
+    border: none;
+    background-color: transparent;
+    color: ${({ theme }) => theme.colors.text};
 `

@@ -1,11 +1,24 @@
-import React from "react";
-import { Container, ProfilePic, Title } from "./styles";
+import React from "react"
+import { useNavigate } from 'react-router-dom'
+import Icon from "../Icon";
+
+import { BackButton, Container, Title } from "./styles"
 
 export default function Header(props) {
-    return (
-        <Container>
-            <ProfilePic src={require("../../assets/logo.png")} />
-            <Title>{props.title}</Title>
-        </Container>
-    )
+    const navigate = useNavigate();
+
+    if (props.children) {
+        return (
+            <Container {...props} />
+        )
+    } else {
+        return (
+            <Container>
+                <BackButton onClick={() => navigate(-1)}>
+                    <Icon icon="arrow-left" />
+                </BackButton>
+                <Title>{props.title}</Title>
+            </Container>
+        )
+    }
 }

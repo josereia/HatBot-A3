@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
-import { Header, TextInput, TextBox } from "../../components"
+import { TextInput, TextBox } from "../../components"
+import Header from "./Header"
+
 import { ChatContainer, Container, Footer } from "./styles";
 
 export default function Home() {
@@ -9,56 +11,6 @@ export default function Home() {
     }])
     const [addMessageKey, setAddMessageKey] = useState(0)
     const [botKey, setBotKey] = useState(0)
-    // const chat = [
-    //     {
-    //         bot: true,
-    //         text: "Olá tudo bem? No que ue posso lhe ajudar"
-    //     },
-    //     {
-    //         bot: true,
-    //         text: "cdlkiçscndsçldd sçlnc dk  dkcpçpdçodçkcdpjç sdcc"
-    //     },
-    //     {
-    //         user: "user",
-    //         text: "cdlkiçscndsçldd sçlnc dk  dkcpçpdçodçkcdpjç sdcc"
-    //     },
-    //     {
-    //         bot: true,
-    //         text: "cdlkiçscndsçldd sçlnc dk  dkcpçpdçodçkcdpjç sdcc"
-    //     },
-    //     {
-    //         user: "user",
-    //         text: "cdlkiçscndsçldd sçlnc dk  dkcpçpdçodçkcdpjç sdcc"
-    //     },
-    //     {
-    //         user: "user",
-    //         text: "cdlkiçscndsçldd"
-    //     },
-    //     {
-    //         bot: true,
-    //         text: "cdlkiçscndsçldd sçlnc dk  dkcpçpdçodçkcdpjç sdcc"
-    //     },
-    //     {
-    //         bot: true,
-    //         text: "cdlkiçscndsçldd sçlnc dk  dkcpçpdçodçkcdpjç sdcc"
-    //     },
-    //     {
-    //         user: "user",
-    //         text: "cdlkiçscndsçldd sçlnc dk  dkcpçpdçodçkcdpjç sdcc"
-    //     },
-    //     {
-    //         bot: true,
-    //         text: "cdlkiçscndsçldd sçlnc dk  dkcpçpdçodçkcdpjç sdcc"
-    //     },
-    //     {
-    //         user: "user",
-    //         text: "cdlkiçscndsçldd sçlnc dk  dkcpçpdçodçkcdpjç sdcc"
-    //     },
-    //     {
-    //         user: "user",
-    //         text: "cdlkiçscndsçldd"
-    //     },
-    // ]
 
     const handleAddMessage = (value) => {
         const userMessage = {

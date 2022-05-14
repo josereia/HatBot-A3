@@ -8,8 +8,8 @@ import About from "../pages/About";
 export default function Routes() {
     return (
         <Switch>
-            <Route index element={<Home />} path="/" />
-            <Route element={<About />} path="/about" />
+            <Route element={<Home />} path="/" />
+            <Route index element={<About />} path="/about" />
         </Switch>
     )
 }
