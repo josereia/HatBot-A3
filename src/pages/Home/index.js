@@ -1,5 +1,5 @@
 import React from "react";
-import { Header, TextInput, TextBox } from "../../components"
+import { Header, TextInput, TextBox, Modal } from "../../components"
 import { ChatContainer, Container, Footer } from "./styles";
 
 export default function Home() {
@@ -68,6 +68,8 @@ export default function Home() {
             <Footer>
                 <TextInput placeholder="Pergunte o que queira saber..." />
             </Footer>
+
+            <Modal />
         </Container>
     );
 }
