@@ -9,7 +9,6 @@ const Modal = ({ children }) => {
   const handleSelect = useCallback(index => {
     setSelected(index)
   }, [selected])
-  console.log(selected)
 
   return (
     <>
