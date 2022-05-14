@@ -13,7 +13,8 @@ export const Container = styled.div`
     border-top-right-radius: ${({ theme, direction }) => direction === "right" ? "0px" : theme.metrics.padding};
     background-color: ${({ theme, direction }) => direction === "left" ? theme.colors.card : theme.colors.primary};
     color: ${({ theme, direction }) => direction === "left" ? theme.colors.text : theme.colors.textContrast};
-`
+    clear: both
+    `
 
 export const Text = styled.p`
     height: 100%;
