@@ -4,7 +4,7 @@ export const Container = styled.div`
     width: 100%;
     height: 100vh;
     padding: ${({ theme }) => theme.metrics.padding};
-    padding-top: 96px;
+    padding-top: 76px;
     display: flex;
     flex-direction: column;
     align-items: center;
