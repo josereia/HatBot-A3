@@ -1,6 +1,6 @@
-import styles from "styled-components";
+import styled from "styled-components";
 
-export const Container = styles.div`
+export const Container = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -11,7 +11,7 @@ export const Container = styles.div`
   align-items: center;
 `
 
-export const ContentModal = styles.div`
+export const ContentModal = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -26,12 +26,12 @@ export const ContentModal = styles.div`
   max-height: 300px
 `
 
-export const Title = styles.h3`
+export const Title = styled.h3`
   color: #fff;
   font-size: 1.3rem
 `;
 
-export const IconContainer = styles.div`
+export const IconContainer = styled.div`
   display: flex;
   justify-content: space-around;
 `
