@@ -4,15 +4,18 @@ import { AiOutlineDislike, AiOutlineLike, AiFillDislike, AiFillLike } from "reac
 
 const Modal = ({ children }) => {
   const [selected, setSelected] = useState(null)
-
+  const [isVisisble, setIsVisible] = useState(true)
 
   const handleSelect = useCallback(index => {
     setSelected(index)
+    setTimeout(() => {
+      setIsVisible(false)
+    }, 1000)
   }, [selected])
 
   return (
     <>
-      {!selected && <Container>
+      {isVisisble && <Container>
         <ContentModal>
           <Title> O que achou do nosso atendimento?</Title>
           <IconContainer>
@@ -30,7 +33,6 @@ const Modal = ({ children }) => {
           </IconContainer>
         </ContentModal>
       </Container>}
-
     </>
   )
 }
