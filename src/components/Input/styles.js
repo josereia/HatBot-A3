@@ -1,6 +1,6 @@
-import styles from "styled-components";
+import styled from "styled-components";
 
-export const Container = styles.div`
+export const Container = styled.div`
     width: 100%;
     height: 50px;
     display: flex;
@@ -11,7 +11,7 @@ export const Container = styles.div`
     background-color: ${({ theme }) => theme.colors.card};
 `
 
-export const Input = styles.input`
+export const Input = styled.input`
     height: 100%;
     padding-left: 16px;
     border: none;
@@ -19,7 +19,7 @@ export const Input = styles.input`
     background-color: transparent;
 `
 
-export const SendButton = styles.button`
+export const SendButton = styled.button`
     width: 50px;
     height: 50px;
     display: flex;
