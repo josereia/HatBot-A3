@@ -1,7 +1,7 @@
 import styles from "styled-components";
 
 export const Container = styles.header`
-    width: 100%;
+    max-width: calc(100% - 32px);
     height: 60px;
     padding: 16px;
     display: flex;
