@@ -2,7 +2,9 @@
 
 <h1 align="center">
   :tophat: HatBot
-  <p><img src="src/assets/botLogo.png"></p>
+  <p></p>
+  <p><img src="src/assets/botLogoPiscar.gif"></p>
+  <p>Um chatbot para vender cursos de ingles</p>
 </h1>
 
 <p>
@@ -11,16 +13,13 @@
   <img src="https://img.shields.io/github/stars/josereia/Chatbot-A3?color=yellow">
   <img src="https://img.shields.io/github/forks/josereia/Chatbot-A3?color=lightgray">
 </p>
-Um chatbot para vender cursos de ingles
-
   
 ## :scroll: Introdução
 
-O projeto partiu de uma avaliação que deveria ser feita na faculdade, porem era uma ideia mais simples, o objetivo era apenas configurar o dialogflow, entretanto nossa equipe decidiu incrementar o projeto e fazer algo com um aspecto mais atrativo e profissional.
+O projeto surgiu de uma avaliação da faculdade, porém era uma ideia mais simples, o objetivo era apenas configurar o DialogFlow para gerar um chatbot que vendia um curso de inglês, entretanto nossa equipe decidiu incrementar o projeto e fazer algo com um aspecto mais atrativo e profissional.
 
 ## 🧰 Tecnologias usadas
-> Para incrementar essa avaliação o projeto tomou uma outra roupagem, e para desenvolver ele com tal proposta precisávamos de algumas ferramentas, então vamos a elas.
-
+> Para trazer esse aspecto mais profissional precisávamos desenvolver uma interface com uma UI bacana e um back-end que consumisse a API do DialogFlow, e para isso precisávamos de algumas ferramentas, então vamos a elas.
 
 - JavaScript 
 - NodeJS 
@@ -28,5 +27,6 @@ O projeto partiu de uma avaliação que deveria ser feita na faculdade, porem er
 - DialogFlow
 
 ## 📷 Imagens do projeto
-
+  <img src="imagem.gif">
+  <!-- aqui eu pensei em colocar umas img gerais do app, e abaixo um gif mostrando como o app funciona -- >
   
