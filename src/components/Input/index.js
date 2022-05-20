@@ -1,24 +1,23 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import CircleButton from "../Buttons/CircleButton";
 import Icon from "../Icon";
 import { Container, Input, SendButton } from "./styles";
 
 export default function TextInput({ placeholder, handleAddMessage }) {
     const [message, setmessage] = useState('')
-    const [clearMessageKey, setClearMessageKey] = useState(0)
 
+    const ref = useRef(null)
     const sendMessage = () => {
         handleAddMessage(message)
-        setClearMessageKey(clearMessageKey + 1)
+        ref.current.value = null
     }
-
-    useEffect(() => {
-        clearMessageKey > 0 && setmessage('')
-    }, [clearMessageKey]);
+    const handleKeyPress = event => {
+        event.key === 'Enter' && console.log('apertou enter')
+    }
 
     return (
         <Container>
-            <Input type="text" placeholder={placeholder} onChange={(e) => setmessage(e.target.value)} />
+            <Input type="text" placeholder={placeholder} onChange={(e) => setmessage(e.target.value)} onKeyDown={e => e.key === 'Enter' && sendMessage()} ref={ref} />
             <CircleButton onClick={() => sendMessage()} icon="send" />
         </Container>
     )

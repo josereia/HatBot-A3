@@ -1,11 +1,15 @@
 import React from "react"
+import { Container, TextContainer, Text, Icon } from "./styles"
+import Logo from "../../assets/logo.png"
 
-import { Container, Text } from "./styles"
-
-export default function TextBox(props) {
+export default function TextBox({direction, text}) {
     return (
-        <Container direction={props.direction}>
-            <Text>{props.text}</Text>
+        <Container {...{direction}}>
+            
+            <Icon {...{direction}}> <img src={Logo} /> </Icon>
+            <TextContainer {...{direction}}>
+                <Text>{text}</Text>
+            </TextContainer>
         </Container>
     )
 }
