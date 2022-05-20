@@ -1,6 +1,5 @@
-import React from "react";
-import { ThemeProvider } from "styled-components";
-import Navigation from "./navigation";
+import { ThemeProvider } from "styled-components"
+import Navigation from "./navigation"
 import getTheme from "./theme"
 
 export default function App() {
@@ -8,5 +7,5 @@ export default function App() {
 		<ThemeProvider theme={getTheme()}>
 			<Navigation />
 		</ThemeProvider>
-	);
+	)
 }

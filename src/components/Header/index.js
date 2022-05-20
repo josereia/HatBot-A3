@@ -1,31 +1,31 @@
-import React from "react"
-import { useNavigate } from 'react-router-dom'
-import Icon from "../Icon";
+import { useNavigate } from "react-router-dom"
+import Icon from "../Icon"
 
 import { BackButton, Container, Title, LeftContainer, RightContainer, ProfilePic } from "./styles"
 
-export default function Header(props) {
+export default function Header({ title, backButton, profilePic, children, ...props }) {
     const navigate = useNavigate();
 
     return (
-        <Container>
+        <Container {...props}>
             <LeftContainer>
                 {
-                    props.backButton &&
+                    backButton &&
                     <BackButton onClick={() => navigate(-1)}>
                         <Icon icon="arrow-left" />
                     </BackButton>
                 }
                 {
-                    props.profilePic &&
-                    <ProfilePic src={props.profilePic} />
+                    profilePic &&
+                    <ProfilePic src={profilePic} />
                 }
-                <Title>{props.title}</Title>
+                <Title>{title}</Title>
             </LeftContainer>
+
             {
-                props.children &&
+                children &&
                 <RightContainer>
-                    {props.children}
+                    {children}
                 </RightContainer>
             }
         </Container>

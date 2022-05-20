@@ -4,7 +4,7 @@ export const Container = styled.button`
     width: 200px;
     height: 50px;
     display: flex;
-    flex-direction: ${props => props.inverted ? "row-reverse" : "row"};
+    flex-direction: ${({ inverted }) => inverted ? "row-reverse" : "row"};
     align-items: center;
     justify-content: center;
     border-radius: 50px;
@@ -22,7 +22,7 @@ export const Container = styled.button`
 `
 
 export const Text = styled.p`
-    margin: 0 ${({theme}) => theme.metrics.padding};
+    margin: 0 ${({ theme }) => theme.metrics.padding};
     font-size: 18px;
     font-weight: bold;
 `

@@ -8,20 +8,16 @@ export const Container = styled.div`
     clear: both;
 `
 
-export const Icon = styled.div`
-    display: ${({ direction }) => direction === "left" ? "flex" : "none"};
-    border-radius: 25px;
+export const ProfilePic = styled.img`
     width: 28px;
     height: 28px;
-    background-color:${({theme}) => theme.colors.card};
-    padding: 5px;
-    margin-right: ${({theme}) => theme.metrics.margin}
+    margin-right: ${({ theme }) => theme.metrics.margin};
+    display: flex;
+    border-radius: 50%;
+    background-color:${({ theme }) => theme.colors.card};
 `
 
 export const TextContainer = styled.div`
-    min-width: 80px;
-    min-height: 50px;
-    max-width: 80%;
     padding: ${({ theme }) => theme.metrics.padding};
     border: solid 1px ${({ theme, direction }) => direction === "left" ? theme.colors.card_shadow : theme.colors.primary_shadow};
     border-radius: ${({ theme }) => theme.metrics.padding};
@@ -32,7 +28,7 @@ export const TextContainer = styled.div`
 `
 
 export const Text = styled.p`
-    width: inherit;
+    width: 100%;
     height: 100%;
-    white-space: normal;
+    white-space: break-word;
 `

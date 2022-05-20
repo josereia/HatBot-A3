@@ -1,13 +1,14 @@
-import React from "react"
-import { Container, TextContainer, Text, Icon } from "./styles"
-import Logo from "../../assets/logo.png"
+import { Container, TextContainer, Text, ProfilePic } from "./styles"
 
-export default function TextBox({direction, text}) {
+export default function TextBox({ direction, text }) {
     return (
-        <Container {...{direction}}>
-            
-            <Icon {...{direction}}> <img src={Logo} /> </Icon>
-            <TextContainer {...{direction}}>
+        <Container {...{ direction }}>
+            {
+                direction === "left" &&
+                <ProfilePic src={require("../../assets/logo.png")} />
+            }
+
+            <TextContainer {...{ direction }}>
                 <Text>{text}</Text>
             </TextContainer>
         </Container>

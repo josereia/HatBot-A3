@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { Button, Header } from "../../components"
 import { getGitHubContributors } from "./api"
 
 import { Container, ContributorContainer, ContributorName, Contributors, Image, Text, Title } from "./styles.js"
 
 export default function About() {
-    const [contributors, setContributors] = useState([]);
+    const [contributors, setContributors] = useState([])
+
     useEffect(() => {
-        getGitHubContributors().then((response) => setContributors(response.data))
+        getGitHubContributors()
+            .then((response) => setContributors(response.data))
     }, [])
 
     return (
@@ -31,7 +33,7 @@ export default function About() {
                     }
                 </Contributors>
             </div>
-            
+
             <a href="https://github.com/josereia/Chatbot-A3" target="_blank"><Button icon="arrow-right" inverted>GitHub</Button></a>
         </Container>
     )

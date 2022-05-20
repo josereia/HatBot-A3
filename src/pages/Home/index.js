@@ -1,24 +1,23 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react"
 import { TextInput, TextBox, Header, Icon, Link } from "../../components"
 
-import { ChatContainer, Container, Footer } from "./styles";
+import { ChatContainer, Container, Footer } from "./styles"
 
 export default function Home() {
-    const [message, setmessage] = useState([{
-        bot: true,
-        text: "Olá tudo bem? No que que posso lhe ajudar?"
-    }])
     const [addMessageKey, setAddMessageKey] = useState(0)
     const [botKey, setBotKey] = useState(0)
+    const [messageHistory, setMessageHistory] = useState([{
+        bot: true,
+        text: "Olá tudo bem? Em que que posso ajudar?"
+    }])
+    const [userMessage, setUserMessage] = useState({
+        bot: false,
+        text: ""
+    })
 
-    const handleAddMessage = (value) => {
-        const userMessage = {
-            bot: false,
-            text: value
-        }
-
-        message.push(userMessage)
-        setmessage(message)
+    const handleAddMessage = () => {
+        setMessageHistory(state => [...state, userMessage])
+        setUserMessage({ ...userMessage, text: "" })
         setAddMessageKey(addMessageKey + 1)
 
         setTimeout(() => {
@@ -32,11 +31,11 @@ export default function Home() {
                 bot: true,
                 text: '...'
             }
-            message.push(botMessage)
-            setmessage(message)
+
+            setMessageHistory(state => [...state, botMessage])
             setAddMessageKey(addMessageKey + 1)
         }
-    }, [botKey]);
+    }, [botKey])
 
     return (
         <Container>
@@ -48,14 +47,21 @@ export default function Home() {
 
             <ChatContainer>
                 {
-                    message.map(item => (
-                        <TextBox text={item.text} direction={item.bot ? "left" : "right"} />
+                    messageHistory.map((item, index) => (
+                        <TextBox key={index} text={item.text} direction={item.bot ? "left" : "right"} />
                     ))
                 }
             </ChatContainer>
 
             <Footer>
-                <TextInput placeholder="Pergunte o que queira saber..." {...{ handleAddMessage }} />
+                <TextInput
+                    type="text"
+                    placeholder="Pergunte o que queira saber..."
+                    value={userMessage.text}
+                    onChange={({ target }) => setUserMessage({ ...userMessage, text: target.value })}
+                    onKeyDown={e => e.key === 'Enter' && handleAddMessage()}
+                    onClick={() => handleAddMessage()}
+                />
             </Footer>
         </Container>
     );
