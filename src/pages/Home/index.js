@@ -13,7 +13,7 @@ export default function Home() {
 
     const handleAddMessage = (value) => {
         const userMessage = {
-            user: "user",
+            bot: false,
             text: value
         }
 
