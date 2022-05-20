@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { TextInput, TextBox } from "../../components"
-import Header from "./Header"
+import { TextInput, TextBox, Header, Icon, Link } from "../../components"
 
 import { ChatContainer, Container, Footer } from "./styles";
 
@@ -27,7 +26,6 @@ export default function Home() {
         }, 1000)
     }
 
-
     useEffect(() => {
         if (botKey > 0) {
             const botMessage = {
@@ -42,7 +40,12 @@ export default function Home() {
 
     return (
         <Container>
-            <Header title="HatBot" />
+            <Header title="HatBot" profilePic={require("../../assets/logo.png")}>
+                <Link to="/about">
+                    <Icon icon="info" />
+                </Link>
+            </Header>
+
             <ChatContainer>
                 {
                     message.map(item => (
@@ -50,6 +53,7 @@ export default function Home() {
                     ))
                 }
             </ChatContainer>
+
             <Footer>
                 <TextInput placeholder="Pergunte o que queira saber..." {...{ handleAddMessage }} />
             </Footer>

@@ -2,23 +2,32 @@ import React from "react"
 import { useNavigate } from 'react-router-dom'
 import Icon from "../Icon";
 
-import { BackButton, Container, Title } from "./styles"
+import { BackButton, Container, Title, LeftContainer, RightContainer, ProfilePic } from "./styles"
 
 export default function Header(props) {
     const navigate = useNavigate();
 
-    if (props.children) {
-        return (
-            <Container {...props} />
-        )
-    } else {
-        return (
-            <Container>
-                <BackButton onClick={() => navigate(-1)}>
-                    <Icon icon="arrow-left" />
-                </BackButton>
+    return (
+        <Container>
+            <LeftContainer>
+                {
+                    props.backButton &&
+                    <BackButton onClick={() => navigate(-1)}>
+                        <Icon icon="arrow-left" />
+                    </BackButton>
+                }
+                {
+                    props.profilePic &&
+                    <ProfilePic src={props.profilePic} />
+                }
                 <Title>{props.title}</Title>
-            </Container>
-        )
-    }
+            </LeftContainer>
+            {
+                props.children &&
+                <RightContainer>
+                    {props.children}
+                </RightContainer>
+            }
+        </Container>
+    )
 }
