@@ -2,7 +2,7 @@
 
 <h1 align="center">
   :tophat: HatBot
-  <p><img src="src/assets/logo.png"></p>
+  <p><img src="src/assets/botLogo.png"></p>
 </h1>
 
 <p>
