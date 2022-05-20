@@ -1,6 +1,10 @@
 :construction: Projeto em desenvolvimento :construction:
 
-<h1 align="center">:tophat: HatBot</h1>
+<h1 align="center">
+  :tophat: HatBot
+  <p><img src="assets/logo.png"></p>
+</h1>
+
 <p>
   <img src="https://img.shields.io/badge/NodeJs-v16.15-yellowgreen">
   <img src="https://img.shields.io/badge/ReactJs-v18.1-blue">
