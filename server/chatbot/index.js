@@ -18,8 +18,23 @@ const sessionClient = new dialogflow.SessionsClient(CONFIGURATION)
 async function detectIntent(lang, text, userId) {
     try {
         let session = sessionClient.projectAgentSessionPath(env.PROJECT_ID, userId)
-        console.log(session)
+
+        const query = {
+            session: session,
+            queryInput: {
+                text: {
+                    text: text,
+                    languageCode: lang,
+
+                }
+            }
+        }
+
+        return await sessionClient.detectIntent(query)
+
     } catch (error) {
         console.log("detectIntent:", error)
     }
 }
+
+module.exports = {detectIntent}
