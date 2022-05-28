@@ -1,5 +1,6 @@
 require('dotenv').config()
 const dialogflow = require('@google-cloud/dialogflow')
+
 //.env
 const env = process.env
 
@@ -18,23 +19,20 @@ const sessionClient = new dialogflow.SessionsClient(CONFIGURATION)
 async function detectIntent(lang, text, userId) {
     try {
         let session = sessionClient.projectAgentSessionPath(env.PROJECT_ID, userId)
-
         const query = {
             session: session,
             queryInput: {
                 text: {
                     text: text,
                     languageCode: lang,
-
                 }
             }
         }
 
         return await sessionClient.detectIntent(query)
-
     } catch (error) {
         console.log("detectIntent:", error)
     }
 }
 
-module.exports = {detectIntent}
+module.exports = { detectIntent }

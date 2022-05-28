@@ -1,11 +1,16 @@
 import Icon from "../../Icon"
+import LoadingSpin from "../../LoadingSpin"
 
 import { Container } from "./styles"
 
-export default function CircleButton({ icon, ...props }) {
+export default function CircleButton({ icon, loading, ...props }) {
     return (
         <Container {...props}>
-            <Icon icon={icon} />
+            {
+                loading
+                    ? <LoadingSpin />
+                    : <Icon icon={icon} />
+            }
         </Container>
     )
 }
