@@ -1,41 +1,29 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import { TextInput, TextBox, Header, Icon, Link } from "../../components"
 
 import { ChatContainer, Container, Footer } from "./styles"
 
+import { postMessage } from "../../services/chatbotAPI"
+
 export default function Home() {
-    const [addMessageKey, setAddMessageKey] = useState(0)
-    const [botKey, setBotKey] = useState(0)
-    const [messageHistory, setMessageHistory] = useState([{
-        bot: true,
-        text: "Olá tudo bem? Em que que posso ajudar?"
-    }])
-    const [userMessage, setUserMessage] = useState({
-        bot: false,
-        text: ""
-    })
+    const chatContainerRef = useRef(null);
+    const [userMessage, setUserMessage] = useState({})
+    const [messageHistory, setMessageHistory] = useState([])
+    const [loading, setLoading] = useState(false)
 
-    const handleAddMessage = () => {
+    async function handleAddMessage() {
         setMessageHistory(state => [...state, userMessage])
-        setUserMessage({ ...userMessage, text: "" })
-        setAddMessageKey(addMessageKey + 1)
-
-        setTimeout(() => {
-            setBotKey(botKey + 1)
-        }, 1000)
+        setLoading(true)
+        await postMessage(userMessage.text).then((res) => {
+            setUserMessage({})
+            setMessageHistory(state => [...state, { bot: true, text: res.data.fulfillmentText }])
+            setLoading(false)
+        })
     }
 
     useEffect(() => {
-        if (botKey > 0) {
-            const botMessage = {
-                bot: true,
-                text: '...'
-            }
-
-            setMessageHistory(state => [...state, botMessage])
-            setAddMessageKey(addMessageKey + 1)
-        }
-    }, [botKey])
+        chatContainerRef.current.scrollTo({ behavior: "smooth", top: 1000 })
+    }, [messageHistory])
 
     return (
         <Container>
@@ -45,7 +33,7 @@ export default function Home() {
                 </Link>
             </Header>
 
-            <ChatContainer>
+            <ChatContainer ref={chatContainerRef}>
                 {
                     messageHistory.map((item, index) => (
                         <TextBox key={index} text={item.text} direction={item.bot ? "left" : "right"} />
@@ -57,10 +45,11 @@ export default function Home() {
                 <TextInput
                     type="text"
                     placeholder="Pergunte o que queira saber..."
-                    value={userMessage.text}
-                    onChange={({ target }) => setUserMessage({ ...userMessage, text: target.value })}
-                    onKeyDown={e => e.key === 'Enter' && handleAddMessage()}
-                    onClick={() => handleAddMessage()}
+                    value={userMessage.text ?? ""}
+                    onChange={({ target }) => setUserMessage({ bot: false, text: target.value })}
+                    onKeyDown={e => e.key === "Enter" && userMessage.text && handleAddMessage()}
+                    onClick={() => userMessage.text && handleAddMessage()}
+                    buttonLoading={loading}
                 />
             </Footer>
         </Container>

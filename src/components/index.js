@@ -6,5 +6,6 @@ import Modal from "./Modal"
 import CircleButton from "./Buttons/CircleButton"
 import Button from "./Buttons/Button"
 import Link from "./Link"
+import LoadingSpin from "./LoadingSpin"
 
-export { Header, TextInput, Icon, TextBox, Modal, CircleButton, Button, Link }
+export { Header, TextInput, Icon, TextBox, Modal, CircleButton, Button, Link, LoadingSpin }
