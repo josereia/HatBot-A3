@@ -24,6 +24,7 @@ export default function Home() {
     useEffect(() => {
         chatContainerRef.current.scrollTo({ behavior: "smooth", top: 1000 })
     }, [messageHistory])
+    console.log(messageHistory)
 
     return (
         <Container>
