@@ -1,5 +1,5 @@
 import axios from "axios"
-const url = "http://192.168.0.5:3334/message"
+const url = "http://192.168.0.2:3334/message"
 
 async function postMessage(text) {
     return await axios.get(url, {

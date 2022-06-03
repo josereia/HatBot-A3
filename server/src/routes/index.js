@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { detectIntent } = require("../chatbot")
+const { detectIntent } = require("../controller/chatbot")
 const url = require("url")
 
 router.get('/message', async (req, res) => {
