@@ -15,9 +15,13 @@ export default function Home() {
         setMessageHistory(state => [...state, userMessage])
         setLoading(true)
         await postMessage(userMessage.text).then((res) => {
-            setUserMessage({})
-            setMessageHistory(state => [...state, { bot: true, text: res.data.fulfillmentText }])
-            setLoading(false)
+            console.log("Intent: " + res.data.intent)
+            for (let index = 0; index < res.data.messages.length; index++) {
+                const element = res.data.messages[index];
+                setUserMessage({})
+                setMessageHistory(state => [...state, { bot: true, text: element.text.text }])
+                setLoading(false)
+            }
         })
     }
 
