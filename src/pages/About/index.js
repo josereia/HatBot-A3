@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Button, Header } from "../../components"
+import { Button, Header } from "../../ChatBot/components"
 import { getGitHubContributors } from "../../services/githubAPI"
 
 import { Container, ContributorContainer, ContributorName, Contributors, Image, Text, Title } from "./styles.js"

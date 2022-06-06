@@ -5,7 +5,7 @@ export default function TextBox({ direction, text }) {
         <Container {...{ direction }}>
             {
                 direction === "left" &&
-                <ProfilePic src={require("../../assets/logo.png")} />
+                <ProfilePic src={require("../../../assets/logo.png")} />
             }
 
             <TextContainer {...{ direction }}>

@@ -23,6 +23,6 @@ export const Container = styled.button`
 
 export const Text = styled.p`
     margin: 0 ${({ theme }) => theme.metrics.padding};
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
 `
