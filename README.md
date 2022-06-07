@@ -1,4 +1,4 @@
-:construction: Projeto em desenvolvimento :construction:
+:construction: Projeto em desenvolvimento !! :construction:
 
 <h1 align="center">
   :tophat: HatBot
@@ -10,8 +10,8 @@
 <p>
   <img src="https://img.shields.io/badge/NodeJs-v16.15-yellowgreen">
   <img src="https://img.shields.io/badge/ReactJs-v18.1-blue">
-  <img src="https://img.shields.io/github/stars/josereia/Chatbot-A3?color=yellow">
-  <img src="https://img.shields.io/github/forks/josereia/Chatbot-A3?color=lightgray">
+  <img src="https://img.shields.io/github/stars/josereia/Hatbot-A3?color=yellow">
+  <img src="https://img.shields.io/github/forks/josereia/Hatbot-A3?color=important">
 </p>
   
 ## :scroll: Introdução
