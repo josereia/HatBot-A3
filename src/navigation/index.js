@@ -17,10 +17,7 @@ export default function NavigationProvider() {
                 </div>
                 <p>Alguma dúvida?</p>
             </Chat>
-            {
-                showChat &&
-                <ChatBotComponent onClose={() => setShowChat(false)} />
-            }
+            <ChatBotComponent onClose={() => setShowChat(false)} visible={showChat} />
         </BrowserRouter>
     )
 }

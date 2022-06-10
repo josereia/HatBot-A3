@@ -80,6 +80,7 @@ export const Chat = styled.div`
 export const ChatBotComponent = styled(ChatBot)`
     width: 360px;
     height: 60%;
+    display: ${(props) => props.visible ? "flex" : "none"};
     position: fixed;
     bottom: 0;
     right: 100px;
