@@ -1,26 +1,25 @@
-import { Container, Section1, Button, BlurCircle, CircleButton } from "./styles"
+import { Container, Section1, Button, BlurCircle, CircleButton, LeftContainer, ButtonsContainer, RightContainer, ImageContainer, SocialButtonsContainer } from "./styles"
 
 export default function Home() {
-
     return (
         <Container>
             <Section1>
-                <div style={{ width: "536px" }}>
+                <LeftContainer>
                     <h1>Do Básico ao Avançado!</h1>
                     <p>Tenha um desconto especial durante seus primeiros 03 meses de estudos.</p>
-                    <div style={{ width: "inherit", display: "flex", justifyContent: "space-between" }}>
+                    <ButtonsContainer>
                         <Button>Comece agora!</Button>
                         <Button style={{ backgroundColor: "#DEDEDE", color: "#000000" }}>
                             Saiba mais!
                         </Button>
-                    </div>
-                </div>
-                <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "flex-end" }}>
-                    <div style={{ width: "60%", height: "100%", display: "flex", alignItems: "flex-end" }}>
+                    </ButtonsContainer>
+                </LeftContainer>
+                <RightContainer>
+                    <ImageContainer>
                         <BlurCircle />
-                        <img src={require("../../assets/person.webp")} alt="" style={{ height: "800px" }} />
-                    </div>
-                    <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+                        <img src={require("../../assets/person.webp")} alt="" />
+                    </ImageContainer>
+                    <SocialButtonsContainer>
                         <CircleButton>
                             <img src={require("../../assets/whats.png")} alt="" />
                         </CircleButton>
@@ -30,8 +29,8 @@ export default function Home() {
                         <CircleButton>
                             <img src={require("../../assets/email.png")} alt="" />
                         </CircleButton>
-                    </div>
-                </div>
+                    </SocialButtonsContainer>
+                </RightContainer>
             </Section1>
         </Container>
     );

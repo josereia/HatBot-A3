@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from "react"
+import { postMessage } from "../../services/chatbotAPI"
+
 import { TextInput, TextBox, Header, Icon, Link } from "./components"
 
 import { ChatContainer, Container, Footer } from "./styles"
 
-import { postMessage } from "../services/chatbotAPI"
-
-export default function ChatBot() {
+export default function ChatBot(props) {
     const chatContainerRef = useRef(null);
     const [userMessage, setUserMessage] = useState({})
     const [messageHistory, setMessageHistory] = useState([])
@@ -26,16 +26,13 @@ export default function ChatBot() {
     }
 
     useEffect(() => {
-        chatContainerRef.current.scrollTo({ behavior: "smooth", top: 1000 })
+        chatContainerRef.current.scrollTo({ behavior: "smooth", top: 9000 })
     }, [messageHistory])
-    console.log(messageHistory)
 
     return (
-        <Container>
+        <Container {...props}>
             <Header title="HatBot" profilePic={require("../../assets/logo.png")}>
-                <Link to="/about">
-                    <Icon icon="info" />
-                </Link>
+                <Icon icon="x-circle" onClick={props.onClose} />
             </Header>
 
             <ChatContainer ref={chatContainerRef}>
@@ -58,5 +55,5 @@ export default function ChatBot() {
                 />
             </Footer>
         </Container>
-    );
+    )
 }
