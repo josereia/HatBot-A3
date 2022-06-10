@@ -8,10 +8,7 @@ export default function NavigationProvider() {
     return (
         <BrowserRouter>
             <Header>
-                <Title>A3G2 Escola de Inglês</Title>
-                <div>
-
-                </div>
+                <Title>Topper Academy</Title>
             </Header>
             <Routes />
             <Chat onClick={() => setShowChat(true)}>
