@@ -4,7 +4,7 @@ export const Container = styled.header`
     width: 100%;
     height: 60px;
     padding: ${({ theme }) => theme.metrics.padding};
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -12,8 +12,14 @@ export const Container = styled.header`
     align-items: center;
     justify-content: space-between;
     border: solid 1px #eee;
+    border-top-left-radius: ${({ theme }) => theme.metrics.padding};
+    border-top-right-radius: ${({ theme }) => theme.metrics.padding};
+    backdrop-filter: blur(50px);
     background-color: ${({ theme }) => theme.colors.background};
-    z-index: 1;
+    z-index: 99;
+    @media(max-width: 600px) {
+        border-radius: 0;
+    };
 `
 
 export const ProfilePic = styled.img`
