@@ -37,6 +37,7 @@ export const Chat = styled.div`
     backdrop-filter: blur(50px);
     background: linear-gradient(to right, rgba(109,85,255,0.9), rgba(236,22,78,0.9));
     color: white;
+    cursor: pointer;
     div {
         width: 40px;
         height: 40px;

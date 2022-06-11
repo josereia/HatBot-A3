@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react"
 import { postMessage } from "../../services/chatbotAPI"
 
-import { TextInput, TextBox, Header, Icon, Link } from "./components"
+import { TextInput, TextBox, Header, Icon } from "./components"
 
 import { ChatContainer, Container, Footer } from "./styles"
 
@@ -10,12 +10,18 @@ export default function ChatBot(props) {
     const [userMessage, setUserMessage] = useState({})
     const [messageHistory, setMessageHistory] = useState([])
     const [loading, setLoading] = useState(false)
+    const [visible, setVisible] = useState(true)
 
     async function handleAddMessage() {
         setMessageHistory(state => [...state, userMessage])
         setLoading(true)
         await postMessage(userMessage.text).then((res) => {
-            console.log("Intent: " + res.data.intent)
+            if (res.data.intent === "Xingamentos") {
+                console.log("xingamento")
+                setTimeout(() => {
+                    setVisible(false)
+                }, 6000);
+            }
             for (let index = 0; index < res.data.messages.length; index++) {
                 const element = res.data.messages[index];
                 setUserMessage({})
@@ -30,7 +36,7 @@ export default function ChatBot(props) {
     }, [messageHistory])
 
     return (
-        <Container {...props}>
+        <Container {...props} visible={visible}>
             <Header title="HatBot" profilePic={require("../../assets/logo.png")}>
                 <Icon icon="x-circle" onClick={props.onClose} />
             </Header>
